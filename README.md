@@ -16,8 +16,7 @@ It is important to note that an image can contain no objects.
 
 ## 3. Parte I: Reconstruction and denoising using Autoencoders
 
-### 3.1 
-
+### 3.1 Background Materials
 
 In this first part of the assignment, you will define a suitable network composed by encoder and de- coder architectures to process MNIST images. You will implement an Autoencoder (AE), a Variational Autoencoder (VAE) and a Denoising Autoencoder (DAE).
 
