@@ -32,6 +32,6 @@ $$ z = μ + e^{0.5(log σ2)} · ε $$
 
 The input of the VAE’s decoder layer becomes the sampled latent vector. Finally, the total loss for the VAE is composed of two parts, the reconstruction loss and the KL Divergence loss. The reconstruction loss is the loss used in the AE. The KL Divergence loss is introduced to evaluate the distance between the learned distribution and a chosen prior (commonly a standard normal distribution). The KL Divergence loss is expressed as:
 
-$$ D_{KL} =−\frac{1}{2} \sum{(1−μ2i +logσi2 −elogσi2))} $$
+$$ D_{KL} =−\frac{1}{2} \sum{(1−μ_{i}^{2} +log(σ)_{i}^{2} −elog(σ)_{i}^{2}))} $$
 
 where N is the dimensionality of the latent space.
