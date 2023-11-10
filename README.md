@@ -94,7 +94,7 @@ $$ Precision = TP / (TP + FP) \space (4)  $$
 
 $$ Recall = TP / (TP + FN) \space (5) $$
 
-$$ F1 Score = 2 \cdot Precision * Recall / (Precision + Recall) \space (6) $$
+$$ F1 Score = 2 \cdot Precision \cdot Recall / (Precision + Recall) \space (6) $$
 
 $$ Average Precision = ∫ Precision(Recall) dRecall, from 0 to 1 \space (7) $$
 
