@@ -88,15 +88,15 @@ In this second part of the assignment, you will use the object detector YOLOv52 
 Evaluating an object detection network is not the same as evaluating an object classification one. In an object detection network, the prediction results are bounding boxes within an image representing the detected objects, instead of a category label associated with an image. These predicted bounding boxes need to be evaluated by the Intersection over Union (IoU) metric, which evaluates the precision of each predicted bounding box with the ground-truth. IoU is represented by (3). The individual bounding box evaluation is the base of the object detection method evaluation metrics, designed by mean-Average Precision (mAP), which is based on Precision and Recall evaluation metrics as shown in (4), (5), (6), and (7).
 
 
-$$ (3) IoU = \frac{{\text{{area of overlap}}}}{{\text{{area of union}}}} $$
+$$ IoU = \frac{{\text{{area of overlap}}}}{{\text{{area of union}}}} $$ (3)
 
-$$ (4) Precision = TP / (TP + FP) $$
+$$ Precision = TP / (TP + FP) $$ (4)
 
-$$ (5) Recall = TP / (TP + FN) $$
+$$ Recall = TP / (TP + FN) $$ (5)
 
-$$ (6) F1 Score = 2 * Precision * Recall / (Precision + Recall) $$
+$$ F1 Score = 2 * Precision * Recall / (Precision + Recall) $$ (6)
 
-$$ (7) Average Precision = ∫ Precision(Recall) dRecall, from 0 to 1 $$
+$$ Average Precision = ∫ Precision(Recall) dRecall, from 0 to 1 $$ (7)
 
 
 
