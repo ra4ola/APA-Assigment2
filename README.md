@@ -29,3 +29,9 @@ Implementing AEs is a simple process in PyTorch. Similarly to how a network is b
 VAE is a type of generative model that combines elements of AEs and probabilistic modeling, meaning that from an initial AE network, modifications can be introduced to build a VAE network. The encoder layer of the AE, outputs a deterministic representation of the feature map, also known as bottleneck. To implement a VAE, the first step will be to modify the encoder’s output layer to output the mean (μ) and the log-variance (log σ2) of a probability distribution over the latent space. The problem now becomes how to sample from the distribution while maintaining the network traversable during back propagation, as the efficient calculation of gradients during the backpropagation process is essential for training neural networks. This is known as the reparameterization trick and consists in adding a sampling layer that generates random samples taken from a normal distribution and scales it by the standard deviation (represented by the log- variance). The latent variable z is modeled as a Gaussian distribution with mean μ and standard deviation σ, and ε is a sample from a standard normal distribution $(ε ∼ N (0, 1))$. Since the VAE learns the log-variance (as it improves numerical stability) the reparameterization trick is expressed as:
 
 $$ z = μ + e^{0.5(log σ2)} · ε $$
+
+The input of the VAE’s decoder layer becomes the sampled latent vector. Finally, the total loss for the VAE is composed of two parts, the reconstruction loss and the KL Divergence loss. The reconstruction loss is the loss used in the AE. The KL Divergence loss is introduced to evaluate the distance between the learned distribution and a chosen prior (commonly a standard normal distribution). The KL Divergence loss is expressed as:
+
+$$ D_{KL} =−\frac{1}{2} \sum{(1−μ2i +logσi2 −elogσi2))} $$
+
+where N is the dimensionality of the latent space.
