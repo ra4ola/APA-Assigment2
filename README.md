@@ -98,8 +98,71 @@ $$ F1 Score = 2 \cdot Precision \cdot Recall / (Precision + Recall) \space (6) $
 
 $$ Average Precision = ∫ Precision(Recall) dRecall, from 0 to 1 \space (7) $$
 
+where:
+- True Positive (TP): correct class prediction and usually IoU > 0.5;
+- False Positive (FP): wrong class or IoU < 0.5;
+- False Negative (FN): missed object detection.
+
+4.1.2 Environment Setup
+The following guideline shows you the steps that you must perform to run YOLOv5 on Colab:
+- First, download the YOLOv5 implementation as well as the KITTI subset prepared for this assignment (https://drive.google.com/file/d/1xMKIf6igwCYWMFTjsovlt04rJwgWUhbj/view);
+- Unzip the file and copy it to you Google Drive;
+- Mount your Google Drive account on the Colab notebook;
+
+```
+from google.colab import drive
+drive.mount('/content/gdrive')
+```
+
+- Change the running directory of the notebook to the ’YOLO’ folder;
+```
+%cd gdrive/MyDrive/YOLO/ # Example of the YOLO folder path
+!git clone https://github.com/ultralytics/yolov5 # clone repo
+%cd yolov5
+%pip install -qr requirements.txt # install dependencies
+```
+
+- Run the ’train.py’ to train the YOLOv5 network or run the ’detect.py’ file to observe the trained YOLOv5 model.
+```
+(pretrained) !python train.py --img 416 --batch 16 --epochs 50 --data DATASETFILE --weights WEIGHTSFILE --cache
+(scratch) !python train.py --img 416 --batch 16 --epochs 50 --data DATASETFILE --weights '' --cfg NETWORK.yaml --cache
+```
+
+## 4.2 Tasks
+- Prepare the data configuration (yaml file to set DATASETFILE) files required to run the YOLOv5 network on the provided KITTI subset. For that, you should use an 80/20% split for training/testing, respectively; DATASETFILE example (data/APA2023.yaml):
+
+```
+train: YOLO/KITTI_dataset/Dataset/train # folder contains images and labels subfolders
+val: YOLO/KITTI_dataset/Dataset/valid # folder contains images and labels subfolders
+nc: 1
+names: [Vehicles]
+```
+- Select one of the architectures available on the YOLOv5’s GitHub webpage (e.g., YOLOv5m or YOLOv5s) and train the YOLOv5 network using only the “object class 0 (cars)”. Train the net- work from scratch during 50 epochs (it will take a while);
+
+- Train the same YOLOv5 architecture using as a starting point the pretrained checkpoints provided on the YOLOv5’s GitHub webpage (use also 50 epochs).
+- Gather the metrics and loss curves for both training conditions.
+
+# 5 Deliverables
 
 
+Each group (two students) must deliver the following material: 
+-A detailed report (cannot exceed 10 pages) with:
+  – Part I:
+    - A theoretical comparison between each AE, VAE and DAE network. For that, present a diagram/table of each network architecture developed;
+    - Report all hyperparameters used;
+    - Plots of the attained loss curves, sets of images that represent the reconstruction capabilities
+of each network (input-reconstruction pairs) and t-SNE visualizations;
+    - Classification architectures used and results obtained using each encoder’s weights;
+    - Comparison and detailed analysis of the results obtained using the developed AE, VAE and
+DAE architectures. 
+  – Part II:
+    - A detailed analysis of the results obtained;
+    - A comparison between achieved results by training the YOLOv5 from scratch and by using
+      transfer learning;
+    - You should write any additional implementation details that you see fit;
+    
+- Google Colab notebooks (.ipynb);
+- All modified files related to the YOLOv5.
 
 
 
