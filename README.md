@@ -146,23 +146,24 @@ names: [Vehicles]
 
 
 Each group (two students) must deliver the following material: 
--A detailed report (cannot exceed 10 pages) with:
-  – Part I:
-    - A theoretical comparison between each AE, VAE and DAE network. For that, present a diagram/table of each network architecture developed;
-    - Report all hyperparameters used;
-    - Plots of the attained loss curves, sets of images that represent the reconstruction capabilities
+
+* A detailed report (cannot exceed 10 pages) with:
+  * Part I:
+    * A theoretical comparison between each AE, VAE and DAE network. For that, present a diagram/table of each network architecture developed;
+    * Report all hyperparameters used;
+    * Plots of the attained loss curves, sets of images that represent the reconstruction capabilities
 of each network (input-reconstruction pairs) and t-SNE visualizations;
-    - Classification architectures used and results obtained using each encoder’s weights;
-    - Comparison and detailed analysis of the results obtained using the developed AE, VAE and
+    * Classification architectures used and results obtained using each encoder’s weights;
+    * Comparison and detailed analysis of the results obtained using the developed AE, VAE and
 DAE architectures. 
-  – Part II:
-    - A detailed analysis of the results obtained;
-    - A comparison between achieved results by training the YOLOv5 from scratch and by using
+  * Part II:
+    * A detailed analysis of the results obtained;
+    * A comparison between achieved results by training the YOLOv5 from scratch and by using
       transfer learning;
-    - You should write any additional implementation details that you see fit;
+    * You should write any additional implementation details that you see fit;
     
-- Google Colab notebooks (.ipynb);
-- All modified files related to the YOLOv5.
+* Google Colab notebooks (.ipynb);
+* All modified files related to the YOLOv5.
 
 
 
